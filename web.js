@@ -2,15 +2,16 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-buf = new Buffer(256);
+var buf = new Buffer(256);
 //len = buf.write('\u00bd + \u00bc = \u00be', 0);
-console.log(len + " bytes: " + buf.toString('utf8', 0, len));
+//console.log(len + " bytes: " + buf.toString('utf8', 0, len));
 
 fs.readFileSync('index.html', function (err, buf) {
   if (err) throw err;
     console.log(data);
     });
-len = buf.length;
+
+var len = buf.length;
 
 app.get('/', function(request, response) {
   response.send(len + " bytes: " + buf.toString('utf8', 0, len))
